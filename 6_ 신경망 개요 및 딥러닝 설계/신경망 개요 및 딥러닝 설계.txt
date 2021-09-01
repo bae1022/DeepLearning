@@ -1,0 +1,49 @@
+실습1_1은 epoch를 100, batch_size를 10으로 두었을 때의 결과이다. 여기서 batch_size와 epoch를 바꿔가며 성능을 비교한다.
+
+ 
+
+실습1_2는 epoch를 100에서 1000으로 늘렸을 때의 결과이다. loss 값이 감소했고, accuracy 값이 증가했다. 이 테스트에서는 성능이 좋아졌지만, epoch를 너무 많이 증가시키면 overfitting이 발생할 수 있다.
+
+참고: https://medium.com/@Aaron__Kim/%ED%95%99%EC%8A%B5-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%84%B8%EB%B6%84%ED%99%94-epoch-batch-iteration-3d3542ae7e44
+
+ 
+
+실습1_3은 batch_size를 10에서 100으로 변경했을 때의 결과이다. 성능 상의 차이는 결과로 잘 보이지 않지만, 실행 속도가 빨라졌다. batch_size는 높아질수록 속도가 증가하지만, 성능이 좋아지지는 않으며 너무 높아질 경우는 local minima 혹은 saddle point가 발생할 수 있다.
+
+ 
+
+실습1_4는 epoch를 1000, batch_size를 100으로 두었을 때의 결과이다. accuracy 값이 증가하고, loss 값이 감소한 것을 볼 수 있다.
+
+ 
+
+실습과제2_1은 epoch를 1000, batch_size를 10으로 두었을 때의 결과이다.
+
+마지막 단계에서 accuracy는 0.8851, loss는 0.2857의 값이 나왔다.
+
+이를 바꿔가며 성능 변화를 살펴본다.
+
+ 
+
+실습2_2 는 model.add() 내의 activation 함수를 기존 relu에서 softplus로 변경한 결과이다. softplus는 relu의 0이 되는 순간을 완화한 것으로, 실험에서는 큰 성능 차이를 보이지는 않았다.
+
+ 
+
+실습2_3은 model.compile() 내의 loss 옵션을 기존 binary_crossentropy에서 mean_squared_error 로 변경한 결과이다. accuracy 값이 증가하고 loss 값이 감소하는 것으로 성능이 좋아지는 것을 볼 수 있었다. binary_crossentropy 때 보다 비교적 시간이 많이 소요되었다.
+
+ 
+
+실습2_4는 입력층의 노드 개수를 17에서 13으로 변경한 결과이다. 가지고 오는 데이터가 적어졌으므로 accuracy는 감소하고, loss가 증가하여 성능이 떨어진 것을 볼 수 있다.
+
+ 
+
+실습2_5는 은닉층의 층 개수를 추가한 결과이다. 적당량의 은닉층 개수 증가는 더 깊은 학습을 할 수 있게 하고, 계산량이 늘어난다. 결과에서도 accuracy가 증가하고, loss가 감소했을 보인다. 그러나 은닉층을 너무 많이 추가하게 되면 성능이 떨어질 수 있다.
+
+참고: https://forensics.tistory.com/22
+
+ 
+
+실습2_6은 accuracy가 0.95 이상이 나오는 딥러닝 모델을 찾은 것이다.
+
+Epoch 981부터 983까지 accuracy가 0.95가 넘은 것을 볼 수 있다.
+
+은닉층을 하나 추가했고, activation 함수를 softplus로 변경하였으며, 노드수를 증가시켰고, loss 옵션을 binary_crossentropy 로 두었을 때 accuracy가 0.95 이상이 나오는 것을 확인할 수 있었다.
